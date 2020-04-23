@@ -1,6 +1,7 @@
 package com.example
 
-import com.example.UserRegistry.ActionPerformed
+import com.example.UserRegistry.UserActionPerformed
+import com.example.BuildingRegistry.BuildingActionPerformed
 
 //#json-formats
 import spray.json.DefaultJsonProtocol
@@ -12,6 +13,10 @@ object JsonFormats  {
   implicit val userJsonFormat = jsonFormat3(User)
   implicit val usersJsonFormat = jsonFormat1(Users)
 
-  implicit val actionPerformedJsonFormat = jsonFormat1(ActionPerformed)
+  implicit val buildingJsonFormat = jsonFormat3(Building)
+  implicit val buildingsJsonFormat = jsonFormat1(Buildings)
+
+  implicit val userActionPerformedJsonFormat = jsonFormat1(UserActionPerformed)
+  implicit val buildingActionPerformedJsonFormat = jsonFormat1(BuildingActionPerformed)
 }
 //#json-formats

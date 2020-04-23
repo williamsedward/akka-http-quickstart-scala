@@ -27,9 +27,9 @@ class UserRoutes(userRegistry: ActorRef[UserRegistry.Command])(implicit val syst
     userRegistry.ask(GetUsers)
   def getUser(name: String): Future[GetUserResponse] =
     userRegistry.ask(GetUser(name, _))
-  def createUser(user: User): Future[ActionPerformed] =
+  def createUser(user: User): Future[UserActionPerformed] =
     userRegistry.ask(CreateUser(user, _))
-  def deleteUser(name: String): Future[ActionPerformed] =
+  def deleteUser(name: String): Future[UserActionPerformed] =
     userRegistry.ask(DeleteUser(name, _))
 
   //#all-routes
